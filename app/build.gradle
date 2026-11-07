@@ -1,0 +1,39 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.dsh.randomalarm'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.dsh.randomalarm"
+        minSdk 26
+        targetSdk 34
+        versionCode 51
+        versionName "6.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['java']
+            res.srcDirs = ['res']
+        }
+    }
+
+    lint {
+        abortOnError false
+    }
+}

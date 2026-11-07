@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121216"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="28dp"
+        android:paddingBottom="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="默认设置"
+            android:textColor="#F2F2F7"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="点击标题可折叠/展开"
+            android:textColor="#9A9AA5"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/hdr_default"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#1E1B2E"
+            android:padding="12dp"
+            android:text="▶ 默认（新建闹钟的默认值）"
+            android:textColor="#F2F2F7"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/group_default"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <Switch
+                android:id="@+id/sw_def_fade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/fade_in"
+                android:textColor="#F2F2F7"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/fade_group_def"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="默认渐强时长"
+                    android:textColor="#9A9AA5"
+                    android:textSize="13sp" />
+
+                <Spinner
+                    android:id="@+id/sp_def_fade_sec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="默认初始音量（渐强起点）"
+                    android:textColor="#9A9AA5"
+                    android:textSize="13sp" />
+
+                <Spinner
+                    android:id="@+id/sp_def_init"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="默认音量上限"
+                android:textColor="#9A9AA5"
+                android:textSize="13sp" />
+
+            <Spinner
+                android:id="@+id/sp_def_volume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="压缩整体响铃音量，关闭渐强也生效"
+                android:textColor="#6E6E78"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="响铃时长"
+                android:textColor="#F2F2F7"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="默认响铃时长"
+                android:textColor="#9A9AA5"
+                android:textSize="13sp" />
+
+            <Spinner
+                android:id="@+id/sp_def_ring"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="最小响铃时长（未到点不能操作）"
+                android:textColor="#9A9AA5"
+                android:textSize="13sp" />
+
+            <Spinner
+                android:id="@+id/sp_min_ring"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="贪睡"
+                android:textColor="#F2F2F7"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/snooze_len"
+                android:textColor="#9A9AA5"
+                android:textSize="13sp" />
+
+            <Spinner
+                android:id="@+id/sp_def_snooze"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="响铃到点后"
+                android:textColor="#9A9AA5"
+                android:textSize="13sp" />
+
+            <Spinner
+                android:id="@+id/sp_def_timeout_action"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="默认贪睡次数"
+                android:textColor="#9A9AA5"
+                android:textSize="13sp" />
+
+            <Spinner
+                android:id="@+id/sp_def_timeout_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Switch
+                android:id="@+id/sw_def_vibrate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/vibrate"
+                android:textColor="#F2F2F7"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="默认音乐来源"
+                android:textColor="#9A9AA5"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_def_folder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="全部本地音乐"
+                android:textColor="#F2F2F7"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_def_pick"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:background="#26262E"
+                    android:text="选择文件夹"
+                    android:textAllCaps="false"
+                    android:textColor="#B9A6FF"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_def_clear"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="#26262E"
+                    android:text="恢复全部音乐"
+                    android:textAllCaps="false"
+                    android:textColor="#9A9AA5"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_def_song"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="指定歌曲：未指定（随机播放）"
+                android:textColor="#F2F2F7"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_def_pick_song"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:background="#26262E"
+                    android:text="指定歌曲"
+                    android:textAllCaps="false"
+                    android:textColor="#B9A6FF"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_def_clear_song"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="#26262E"
+                    android:text="取消指定"
+                    android:textAllCaps="false"
+                    android:textColor="#9A9AA5"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_apply_all"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="24dp"
+                android:background="#7C4DFF"
+                android:text="应用到所有闹钟"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="把上面的默认值覆盖到全部已创建的闹钟（时间和重复星期不变）"
+                android:textColor="#5E5E68"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/hdr_global"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#1E1B2E"
+            android:padding="12dp"
+            android:text="▶ 全局（立即生效）"
+            android:textColor="#F2F2F7"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/group_global"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="随机起播位置"
+                android:textColor="#F2F2F7"
+                android:textSize="16sp" />
+
+            <Switch
+                android:id="@+id/sw_def_random"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/random_start"
+                android:textColor="#F2F2F7"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/random_start_desc"
+                android:textColor="#9A9AA5"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:id="@+id/random_group_def"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="起播区间（占歌曲时长）"
+                    android:textColor="#9A9AA5"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/sp_def_start_min"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="～"
+                        android:textColor="#9A9AA5"
+                        android:textSize="15sp" />
+
+                    <Spinner
+                        android:id="@+id/sp_def_start_max"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="滑动操作"
+                android:textColor="#F2F2F7"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="上滑"
+                android:textColor="#9A9AA5"
+                android:textSize="13sp" />
+
+            <Spinner
+                android:id="@+id/sp_swipe_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="下滑"
+                android:textColor="#9A9AA5"
+                android:textSize="13sp" />
+
+            <Spinner
+                android:id="@+id/sp_swipe_down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="左滑"
+                android:textColor="#9A9AA5"
+                android:textSize="13sp" />
+
+            <Spinner
+                android:id="@+id/sp_swipe_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="右滑"
+                android:textColor="#9A9AA5"
+                android:textSize="13sp" />
+
+            <Spinner
+                android:id="@+id/sp_swipe_right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="封面亮度"
+                android:textColor="#9A9AA5"
+                android:textSize="13sp" />
+
+            <Spinner
+                android:id="@+id/sp_def_cover"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="屏幕方向"
+                android:textColor="#9A9AA5"
+                android:textSize="13sp" />
+
+            <Spinner
+                android:id="@+id/sp_orientation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/hdr_timer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#1E1B2E"
+            android:padding="12dp"
+            android:text="▶ 计时"
+            android:textColor="#F2F2F7"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/group_timer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="计时器快捷时间"
+                android:textColor="#9A9AA5"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/preset_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <Button
+                android:id="@+id/btn_add_preset"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="6dp"
+                android:background="#26262E"
+                android:text="＋ 添加快捷时间"
+                android:textAllCaps="false"
+                android:textColor="#B9A6FF"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_history"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="20dp"
+            android:background="#26262E"
+            android:text="响铃历史"
+            android:textAllCaps="false"
+            android:textColor="#B9A6FF"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="设置即时保存"
+            android:textColor="#5E5E68"
+            android:textSize="13sp" />
+    </LinearLayout>
+</ScrollView>

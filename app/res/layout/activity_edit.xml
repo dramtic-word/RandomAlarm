@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121216"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="32dp">
+
+        <TimePicker
+            android:id="@+id/picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:timePickerMode="spinner" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/repeat_days"
+            android:textColor="#9A9AA5"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/days_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal" />
+
+        <Switch
+            android:id="@+id/sw_silent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="静音播放（只震动，不发声）"
+            android:textColor="#F2F2F7"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开启后自动隐藏所有发声相关设置"
+            android:textColor="#9A9AA5"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:id="@+id/sound_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Switch
+                android:id="@+id/sw_fade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/fade_in"
+                android:textColor="#F2F2F7"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fade_in_desc"
+                android:textColor="#9A9AA5"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:id="@+id/fade_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="渐强时长"
+                    android:textColor="#9A9AA5"
+                    android:textSize="13sp" />
+
+                <Spinner
+                    android:id="@+id/sp_fade_sec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="初始音量（渐强起点）"
+                    android:textColor="#9A9AA5"
+                    android:textSize="13sp" />
+
+                <Spinner
+                    android:id="@+id/sp_init_volume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="音量上限"
+                android:textColor="#9A9AA5"
+                android:textSize="13sp" />
+
+            <Spinner
+                android:id="@+id/sp_max_volume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="压缩整体响铃音量，关闭渐强也生效"
+                android:textColor="#6E6E78"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="音乐来源"
+                android:textColor="#9A9AA5"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_folder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="全部本地音乐"
+                android:textColor="#F2F2F7"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_pick_folder"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:background="#26262E"
+                    android:text="选择文件夹"
+                    android:textAllCaps="false"
+                    android:textColor="#B9A6FF"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_clear_folder"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="#26262E"
+                    android:text="恢复全部音乐"
+                    android:textAllCaps="false"
+                    android:textColor="#9A9AA5"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_song"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="指定歌曲：未指定（随机播放）"
+                android:textColor="#F2F2F7"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_pick_song"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:background="#26262E"
+                    android:text="指定歌曲"
+                    android:textAllCaps="false"
+                    android:textColor="#B9A6FF"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_clear_song"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="#26262E"
+                    android:text="取消指定"
+                    android:textAllCaps="false"
+                    android:textColor="#9A9AA5"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="响铃时长"
+            android:textColor="#F2F2F7"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/sp_ring_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="最小响铃时长（未到点不能操作）"
+            android:textColor="#9A9AA5"
+            android:textSize="13sp" />
+
+        <Spinner
+            android:id="@+id/sp_min_ring"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="贪睡"
+            android:textColor="#F2F2F7"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/snooze_len"
+            android:textColor="#9A9AA5"
+            android:textSize="13sp" />
+
+        <Spinner
+            android:id="@+id/sp_snooze"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="响铃到点后"
+            android:textColor="#9A9AA5"
+            android:textSize="13sp" />
+
+        <Spinner
+            android:id="@+id/sp_timeout_action"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/label_timeout_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="贪睡次数"
+            android:textColor="#9A9AA5"
+            android:textSize="13sp" />
+
+        <Spinner
+            android:id="@+id/sp_timeout_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Switch
+            android:id="@+id/sw_vibrate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/vibrate"
+            android:textColor="#F2F2F7"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vibrate_desc"
+            android:textColor="#9A9AA5"
+            android:textSize="13sp" />
+
+        <Switch
+            android:id="@+id/sw_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="响铃后删除此闹钟"
+            android:textColor="#F2F2F7"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:hint="@string/label_hint"
+            android:inputType="text"
+            android:textColor="#F2F2F7"
+            android:textColorHint="#6E6E78" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="26dp"
+            android:background="#7C4DFF"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="#2A1F26"
+            android:text="@string/delete"
+            android:textAllCaps="false"
+            android:textColor="#FF6B81" />
+    </LinearLayout>
+</ScrollView>

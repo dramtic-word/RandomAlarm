@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">随机闹钟</string>
+    <string name="add_alarm">＋ 新建闹钟</string>
+    <string name="no_alarm">还没有闹钟，点下面按钮新建一个</string>
+    <string name="label_hint">标签（可选）</string>
+    <string name="save">保存</string>
+    <string name="delete">删除</string>
+    <string name="cancel">取消</string>
+    <string name="stop">停止</string>
+    <string name="snooze">贪睡 %1$d 分钟</string>
+    <string name="random_start">随机起播位置</string>
+    <string name="random_start_desc">跳过前奏，每次从歌曲不同位置开始</string>
+    <string name="fade_in">音量渐强</string>
+    <string name="fade_in_desc">从小音量逐渐增大</string>
+    <string name="vibrate">响铃时震动</string>
+    <string name="vibrate_desc">闹钟响铃期间持续震动</string>
+    <string name="repeat_days">重复</string>
+    <string name="snooze_len">贪睡时长</string>
+    <string name="permission_needed">需要授予权限才能可靠响铃</string>
+    <string name="grant">去授予</string>
+    <string name="notif_title">闹钟</string>
+    <string name="ringing">正在响铃</string>
+    <string name="song_unknown">正在挑选歌曲…</string>
+    <string name="no_music">没有在媒体库里找到音乐文件，请先把歌曲放进手机</string>
+    <string name="exact_alarm_hint">需要“闹钟与提醒”权限才能精确响铃</string>
+    <string name="battery_hint">建议关闭电池优化，否则系统可能杀掉闹钟</string>
+    <string name="widget_name">随机闹钟 · 时钟</string>
+    <string name="widget_desc">横 2 竖 1 的时钟：点时间打开随机闹钟，点日期打开日历</string>
+</resources>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ring_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B0B0E">
+
+    <ImageView
+        android:id="@+id/ring_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.6"
+        android:scaleType="centerCrop" />
+
+    <View
+        android:id="@+id/ring_scrim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#59000000" />
+
+    <FrameLayout
+        android:id="@+id/ring_move"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:paddingTop="34dp"
+            android:paddingBottom="120dp">
+
+            <LinearLayout
+                android:id="@+id/ring_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|center_horizontal"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <TextView
+                    android:id="@+id/ring_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="#FFFFFF"
+                    android:textSize="64sp" />
+
+                <TextView
+                    android:id="@+id/ring_song"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:textColor="#F2F2F7"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/ring_artist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center"
+                    android:textColor="#C9C9D2"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <SeekBar
+                        android:id="@+id/ring_seek"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp" />
+
+                    <TextView
+                        android:id="@+id/ring_progress_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="monospace"
+                        android:textColor="#C9C9D2"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/ring_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#B9A6FF"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="24dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_snooze"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_marginRight="14dp"
+                android:layout_weight="1"
+                android:background="#26262E"
+                android:text="@string/snooze"
+                android:textAllCaps="false"
+                android:textColor="#F2F2F7"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btn_stop"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:background="#7C4DFF"
+                android:text="@string/stop"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lock_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="30dp"
+            android:textColor="#B9A6FF"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/hint_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="10dp"
+            android:textColor="#8A8A96"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/hint_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="96dp"
+            android:textColor="#8A8A96"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/hint_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="6dp"
+            android:textColor="#8A8A96"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/hint_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="6dp"
+            android:textColor="#8A8A96"
+            android:textSize="12sp" />
+    </FrameLayout>
+</FrameLayout>

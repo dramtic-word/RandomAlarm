@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="android:Theme.Material.NoActionBar">
+        <item name="android:colorPrimary">#1B1B1F</item>
+        <item name="android:colorPrimaryDark">#000000</item>
+        <item name="android:colorAccent">#7C4DFF</item>
+        <item name="android:windowBackground">#121216</item>
+        <item name="android:textColorPrimary">#F2F2F7</item>
+        <item name="android:textColorSecondary">#9A9AA5</item>
+        <item name="android:statusBarColor">#121216</item>
+        <item name="android:navigationBarColor">#121216</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="RingTheme" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#0B0B0E</item>
+        <item name="android:colorAccent">#7C4DFF</item>
+        <item name="android:windowShowWallpaper">false</item>
+        <item name="android:statusBarColor">#0B0B0E</item>
+        <item name="android:navigationBarColor">#0B0B0E</item>
+    </style>
+</resources>
