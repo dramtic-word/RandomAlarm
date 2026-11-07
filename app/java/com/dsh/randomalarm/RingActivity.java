@@ -22,6 +22,7 @@ public class RingActivity extends Activity {
     private View contentView;
     private android.widget.SeekBar seekBar;
     private TextView progressText;
+    private View seekRow;
     private TextView lockHint;
     private boolean dragging;
     private boolean downSeek;
@@ -69,6 +70,7 @@ public class RingActivity extends Activity {
 
         seekBar = findViewById(R.id.ring_seek);
         progressText = findViewById(R.id.ring_progress_text);
+        seekRow = findViewById(R.id.seek_row);
         lockHint = findViewById(R.id.lock_hint);
         seekBar.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -114,6 +116,11 @@ public class RingActivity extends Activity {
             }
             TextView snooze = findViewById(R.id.btn_snooze);
             snooze.setText(getString(R.string.snooze, alarm.snoozeMinutes));
+        }
+
+        boolean silentRing = alarm != null ? alarm.silent : Prefs.timerSilent(this);
+        if (silentRing) {
+            seekRow.setVisibility(View.GONE);
         }
 
         findViewById(R.id.btn_stop).setOnClickListener(v -> {

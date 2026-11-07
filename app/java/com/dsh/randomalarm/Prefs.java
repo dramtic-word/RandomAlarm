@@ -76,6 +76,22 @@ public class Prefs {
         sp(c).edit().putInt("minRingSeconds", Math.max(0, v)).apply();
     }
 
+    public static int preAlertMinutes(Context c) {
+        return Math.max(0, Math.min(120, sp(c).getInt("preAlertMinutes", 10)));
+    }
+
+    public static void setPreAlertMinutes(Context c, int v) {
+        sp(c).edit().putInt("preAlertMinutes", Math.max(0, Math.min(120, v))).apply();
+    }
+
+    public static boolean timerSilent(Context c) {
+        return sp(c).getBoolean("timerSilent", false);
+    }
+
+    public static void setTimerSilent(Context c, boolean v) {
+        sp(c).edit().putBoolean("timerSilent", v).apply();
+    }
+
     public static final int ORIENT_FREE = 0;
     public static final int ORIENT_PORTRAIT = 1;
     public static final int ORIENT_LANDSCAPE = 2;

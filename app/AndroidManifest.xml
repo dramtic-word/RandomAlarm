@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    android:versionCode="51"
-    android:versionName="6.0">
+    android:versionCode="52"
+    android:versionName="6.1">
 
     <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="34" />
 
@@ -72,6 +72,10 @@
 
         <receiver
             android:name=".PreAlertReceiver"
+            android:exported="false" />
+
+        <receiver
+            android:name=".PreAlertActionReceiver"
             android:exported="false" />
 
         <receiver

@@ -254,6 +254,15 @@ public class AlarmService extends Service {
             }
             return;
         }
+        if (alarm == null && Prefs.timerSilent(this)) {
+            currentTitle = "静音计时器";
+            currentArtist = "只震动，不发声";
+            HistoryStore.add(this, "静音", "静音计时器");
+            if (Prefs.ringSeconds(this) > 0) {
+                handler.postDelayed(ringTimeout, Prefs.ringSeconds(this) * 1000L);
+            }
+            return;
+        }
         playRandomStart = Prefs.randomStart(this);
         playStartMin = Prefs.randomStartMin(this);
         playStartMax = Prefs.randomStartMax(this);

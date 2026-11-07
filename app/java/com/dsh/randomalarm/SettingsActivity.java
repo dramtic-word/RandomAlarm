@@ -31,9 +31,10 @@ public class SettingsActivity extends Activity {
     private static final String[] MIN_RING_TEXT = {"不限制", "3 秒", "5 秒", "10 秒", "15 秒"};
     private static final String[] SWIPE_TEXT = {"禁止", "关闭", "贪睡", "切歌"};
     private static final String[] ORIENT_TEXT = {"自由（跟随系统）", "强制竖屏", "强制横屏"};
-    private Switch swRandom, swFade, swVibrate;
+    private static final int[] PRE_ALERT = {0, 5, 10, 15, 30};
+    private Switch swRandom, swFade, swVibrate, swTimerSilent;
     private Spinner spSnooze, spFadeSec, spMaxVolume, spInitVolume, spRingTime, spTimeoutAction, spTimeoutCount, spStartMin, spStartMax, spCover, spMinRing;
-    private Spinner spSwipeUp, spSwipeDown, spSwipeLeft, spSwipeRight, spOrientation;
+    private Spinner spSwipeUp, spSwipeDown, spSwipeLeft, spSwipeRight, spOrientation, spPreAlert;
     private android.widget.LinearLayout presetBox;
     private TextView tvFolder;
     private String folderUri = "";
@@ -63,6 +64,8 @@ public class SettingsActivity extends Activity {
         spSwipeLeft = findViewById(R.id.sp_swipe_left);
         spSwipeRight = findViewById(R.id.sp_swipe_right);
         spOrientation = findViewById(R.id.sp_orientation);
+        spPreAlert = findViewById(R.id.sp_pre_alert);
+        swTimerSilent = findViewById(R.id.sw_timer_silent);
         presetBox = findViewById(R.id.preset_box);
         tvFolder = findViewById(R.id.tv_def_folder);
 
@@ -381,6 +384,12 @@ public class SettingsActivity extends Activity {
                 Prefs.randomStartMax(this), v -> Prefs.setRandomStartMax(this, v));
         NumberSpinner.bind(this, spCover, COVER, "%", 10, 100,
                 Prefs.coverBrightness(this), v -> Prefs.setCoverBrightness(this, v));
+        NumberSpinner.bind(this, spPreAlert, PRE_ALERT, "分钟", 0, 120,
+                Prefs.preAlertMinutes(this), v -> Prefs.setPreAlertMinutes(this, v));
+
+        swTimerSilent.setChecked(Prefs.timerSilent(this));
+        swTimerSilent.setOnCheckedChangeListener((v, checked) ->
+                Prefs.setTimerSilent(this, checked));
 
         findViewById(R.id.btn_def_pick).setOnClickListener(v -> {
             Intent i = new Intent(Intent.ACTION_OPEN_DOCUMENT_TREE);
@@ -519,7 +528,7 @@ public class SettingsActivity extends Activity {
             row.setGravity(android.view.Gravity.CENTER_VERTICAL);
             android.widget.TextView tv = new android.widget.TextView(this);
             String text = formatPreset(presets.get(i).seconds);
-            if (!presets.get(i).label.isEmpty()) text += " · " + presets.get(i).label;
+            if (!presets.get(i).label.isEmpty()) text += " ☑ " + presets.get(i).label;
             tv.setText(text);
             tv.setTextColor(0xFFF2F2F7);
             tv.setTextSize(15);

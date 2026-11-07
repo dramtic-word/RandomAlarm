@@ -26,6 +26,7 @@ public class AlarmScheduler {
         Intent i = new Intent(c, PreAlertReceiver.class);
         i.setAction("com.dsh.randomalarm.PRE_ALERT");
         i.putExtra("alarmId", id);
+        i.putExtra("preMinutes", Prefs.preAlertMinutes(c));
         int flags = PendingIntent.FLAG_UPDATE_CURRENT;
         if (Build.VERSION.SDK_INT >= 23) flags |= PendingIntent.FLAG_IMMUTABLE;
         return PendingIntent.getBroadcast(c, (int) (id ^ (id >>> 32)) + 100000, i, flags);
@@ -88,8 +89,9 @@ public class AlarmScheduler {
             am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, fire);
         }
         PendingIntent pre = preAlertIntent(c, a.id);
-        long preAt = at - 10 * 60_000L;
-        if (preAt > System.currentTimeMillis()) {
+        int preMinutes = Prefs.preAlertMinutes(c);
+        long preAt = at - preMinutes * 60_000L;
+        if (preMinutes > 0 && preAt > System.currentTimeMillis()) {
             try {
                 am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, preAt, pre);
             } catch (Exception ignored) {

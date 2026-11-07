@@ -310,7 +310,7 @@ public class MainActivity extends Activity {
         String[] items = new String[presets.size() + 2];
         for (int i = 0; i < presets.size(); i++) {
             Prefs.TimerPreset p = presets.get(i);
-            items[i] = formatPreset(p.seconds) + (p.label.isEmpty() ? "" : " · " + p.label);
+            items[i] = formatPreset(p.seconds) + (p.label.isEmpty() ? "" : " ☑ " + p.label);
         }
         items[presets.size()] = "自定义…";
         items[presets.size() + 1] = "管理快捷时间…";

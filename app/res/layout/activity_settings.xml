@@ -478,6 +478,19 @@
                 android:id="@+id/sp_orientation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="提前通知时间（0 关闭）"
+                android:textColor="#9A9AA5"
+                android:textSize="13sp" />
+
+            <Spinner
+                android:id="@+id/sp_pre_alert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <TextView
@@ -498,6 +511,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:visibility="gone">
+
+            <Switch
+                android:id="@+id/sw_timer_silent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="计时器静音播放（只震动）"
+                android:textColor="#F2F2F7"
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
